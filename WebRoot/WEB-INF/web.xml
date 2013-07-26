@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+  <servlet>  
+    <servlet-name>hessianService</servlet-name>  
+    <!-- 注意这里,这是hessian提供的 -->  
+    <servlet-class>com.caucho.hessian.server.HessianServlet</servlet-class>  
+    <init-param>  
+        <param-name>service-class</param-name>  
+        <!-- 实例化后调用的类 -->  
+        <param-value>guilinsoft.ddsx.api.WdpfImpl</param-value>  
+    </init-param>  
+    <load-on-startup>1</load-on-startup>  
+  </servlet>  
+      
+  <servlet-mapping>  
+    <servlet-name>hessianService</servlet-name>  
+    <url-pattern>/hessianService</url-pattern>  
+  </servlet-mapping>  
+  
+   <servlet>
+    <servlet-name>register</servlet-name>
+    <servlet-class>guilinsoft.ddsx.action.Register</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>taskselect</servlet-name>
+    <servlet-class>guilinsoft.ddsx.action.Taskselect</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>status</servlet-name>
+    <servlet-class>guilinsoft.ddsx.action.Status</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>softupdatestatus</servlet-name>
+    <servlet-class>guilinsoft.ddsx.action.Softupdatestatus</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>tasks</servlet-name>
+    <servlet-class>guilinsoft.ddsx.action.Tasks</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>content</servlet-name>
+    <servlet-class>guilinsoft.ddsx.action.Content</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>upload</servlet-name>
+    <servlet-class>guilinsoft.ddsx.action.Upload</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>regetad</servlet-name>
+    <servlet-class>guilinsoft.ddsx.action.Regetad</servlet-class>
+  </servlet>
+
+
+
+  <servlet-mapping>
+    <servlet-name>register</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>taskselect</servlet-name>
+    <url-pattern>/taskselect</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>status</servlet-name>
+    <url-pattern>/status</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>softupdatestatus</servlet-name>
+    <url-pattern>/softupdatestatus</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>tasks</servlet-name>
+    <url-pattern>/tasks</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>content</servlet-name>
+    <url-pattern>/content</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>upload</servlet-name>
+    <url-pattern>/upload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>regetad</servlet-name>
+    <url-pattern>/regetad</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
